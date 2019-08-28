@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张先森个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
+    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{$root}/templates/Css/public.css"/>
+    <link rel="stylesheet" href="{$root}/templates/Css/index.css"/>
+    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
+    <script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
+    <script type="text/javascript" src="{$root}/templates/Js/index.js"></script>
+</head>
+{assign var='NavId' value='index'}
+<body>
+{include file='./canvasBackground.html'}
+<!--top-->
+<div class="top">
+    {include file='./topMenu.html'}
+</div>
+<!--end_top-->
+<!--center-->
+<div class="center">
+    <!--left_box-->
+    <div class="left_box">
+        <!--banner-->
+        <div class="banner">
+            <ul>
+                {foreach $life_dribs as $value}
+                   {if $value@key < 3}
+                       <li class="slide"><a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank"><img src="{$root}/{$value.SmallImageUrl}" title="{$value.Title}"/></a></li>
+                   {/if}
+                {/foreach}
+            </ul>
+            <div class="banner_controls">
+                <div class="page_prev" id="page_prev"></div>
+                <div class="page_next" id="page_next"></div>
+                <ul class="page_list" id="page_list">
+                    <!--<li>js动态按钮创建</li>-->
+                </ul>
+            </div>
+        </div>
+        <!--end_banner-->
+        <!--lb_header-->
+        <div class="lb_header">
+            <ul>
+                {foreach $learn_share as $value}
+                {if $value@key < 2}
+                <li>
+                    <a href="{$root}learnShare_View/{$value.id}.html" target="_blank">
+                        <img src="{$root}/{$value.SmallImageUrl}" title="{$value.Title}"/>
+                        <span>{$value.Title}</span>
+                    </a>
+                </li>
+                {/if}
+                {/foreach}
+            </ul>
+        </div>
+        <!--end_lb_header-->
+        <!--lb_hot_share-->
+        <div class="lb_hot_share">
+            <span class="lb_hot_share_title">学习分享</span>
+            <ul>
+                {foreach $learn_share as $value}
+                {if $value@key < 6}
+                <li>
+                    <i>
+                        <a href="{$root}learnShare_View/{$value.id}.html" target="_blank">
+                            <img src="{$root}/{$value.SmallImageUrl}" title="{$value.Title}"/>
+                        </a>
+                    </i>
+                    <b>{$value.Title}</b>
+                    <span class="content">{$value.Introduce}</span>
+                    <a href="{$root}learnShare_View/{$value.id}.html" target="_blank" class="readMore"><span>+</span>文章阅读</a>
+                    <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span data-id="{$value.id}">{$value.ClickLike}</span></span>
+                </li>
+                {/if}
+                {/foreach}
+            </ul>
+        </div>
+        <!--end_lb_hot_share-->
+        <!--lb_recommend_share-->
+        <div class="lb_recommend_share">
+            <span class="lb_recommend_share_title">博文推荐</span>
+            <ul>
+                {foreach $results_index as $value}
+                <li data-scroll-reveal='enter bottom over 1s'>
+                    <div class="blog_title">
+                        <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank">
+                            <b>【热】</b>
+                            <span>{$value.Title}</span>
+                        </a>
+                    </div>
+                    <div class="blog_content">
+                        <i class="blog_content_img">
+                            <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank">
+                                <img src="{$root}/{$value.SmallImageUrl}" title="{$value.Title}"/>
+                            </a>
+                        </i>
+                        <span class="blog_text">{$value.Introduce}</span>
+                        <span class="blog_info">
+                            <span class="author">{$value.Author}</span>
+                            <span class="time">{$value.Time}</span>
+                            <span class="see"><img src="{$root}/templates/Images/see.png"/><span>{$value.ReadCount}</span></span>
+                            <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span data-id="{$value.id}">{$value.ClickLike}</span></span>
+                            <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank" class="readMore">阅读文章</a>
+                        </span>
+                    </div>
+                </li>
+                {/foreach}
+            </ul>
+        </div>
+        <!--end_lb_recommend_share-->
+        <!--lb_recommend_share_page-->
+        <div class="lb_recommend_share_page">
+            <ul>
+                <li><a href="{$root}index_{if $page_index>1}{$page_index-1}{else}{1}{/if}/">上一页</a></li>
+                {for $foo=1 to $pages_index max=6}
+                <li><a href="{$root}index_{$foo}/" class="{if $foo==$page_index}page On{else}page{/if}">{$foo}</a></li>
+                {/for}
+                <li><a href="{$root}index_{if $page_index<$pages_index}{$page_index+1}{else}{$pages_index}{/if}/">下一页</a></li>
+            </ul>
+        </div>
+        <!--end_lb_recommend_share_page-->
+    </div>
+    <!--left_box-->
+    <!--right_box-->
+    <div class="right_box">
+        <!--myself_card-->
+        <div class="myself_card">
+            {foreach $about_me as $value}
+            {if $value@key < 1}
+            <h2>张先森个人简介</h2>
+            <p>职业：{$value.Perfession}</p>
+            <p>现居：{$value.Address}</p>
+            <p>Email：{$value.Email}</p>
+            {/if}
+            {/foreach}
+            <ul class="contact_link">
+                <li>
+                    <a href="{$root}" target="_self" class="iconfont home" title="张先森个人博客"></a>
+                </li><!--seo关键字//单独建表-->
+                <li>
+                    <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=987354940@qq.com" target="_blank" class="iconfont Email" title="邮箱"></a>
+                </li>
+                <li>
+                    <a href="tencent://Message/?Uin=987354940&websiteName=www.oicqzone.com&Menu=yes" target="_blank" class="iconfont qq"  title="qq"></a>
+                </li>
+                <li>
+                    <a href="" target="_blank" class="iconfont weixin"  title="关注我的微信"></a>
+                    <img src=""/>
+                </li>
+            </ul>
+        </div>
+        <!--end_myself_card-->
+        <!--rb_hot_click-->
+        <div class="rb_hot_click">
+            <span class="rb_hot_click_title">点击排行</span>
+            <ul>
+                {foreach $life_dribs as $value}
+                {if $value@key < 8}
+                <li>
+                    <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank">
+                        <span class="serialNumber"></span>
+                        <span class="title">{$value.Title}</span>
+                    </a>
+                </li>
+                {/if}
+                {/foreach}
+            </ul>
+        </div>
+        <!--end_rb_hot_click-->
+        <!--station_recommend-->
+        <div class="station_recommend">
+            <span class="station_recommend_title">站长推荐</span>
+            <ul>
+                {foreach $learn_share as $value}
+                {if $value@key < 8}
+                <li>
+                    <a href="{$root}learnShare_View/{$value.id}.html" target="_blank">
+                        <i><img src="{$root}/{$value.SmallImageUrl}"/></i>
+                        <span>{$value.Title}</span>
+                    </a>
+                </li>
+                {/if}
+                {/foreach}
+            </ul>
+        </div>
+        <!--end_station_recommend-->
+        <!--rb_excellentBlogs-->
+        <div class="rb_excellentBlogs">
+            <span class="rb_excellentBlogs_title">优秀博客</span>
+            <ul>
+                {foreach $excellent_blogs as $value}
+                <li><a href="{$value.SiteUrl}" target="_blank" title="{$value.Title}">{$value.Title}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+        <!--end_rb_excellentBlogs-->
+        <!--rb_QRcode-->
+        <div class="rb_QRcode">
+            <span class="rb_QRcode_title">关注我们</span>
+            <img src="{$root}/templates/Images/weixin_code.png" class="rb_QRcode_img"/>
+        </div>
+        <!--end_rb_QRcode-->
+    </div>
+    <!--end_right_box-->
+</div>
+<!--end_center-->
+<!--bottom-->
+<div class="bottom">
+    {include file='./bottomFoot.html'}
+</div>
+<!--end_bottom-->
+</body>
+</html>

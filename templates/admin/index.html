@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客后台管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
+    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
+    <link rel="stylesheet" href="{$root}templates/admin/Css/public.css"/>
+    <link rel="stylesheet" href="{$root}templates/admin/Css/index.css"/>
+    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="{$root}/templates/admin/Js/index.js"></script>
+</head>
+<body>
+<!--center-->
+<div class="center">
+    <!--admin_nav-->
+    <div class="admin_nav">
+        <ul>
+            <li class="li_cur"><span>学习分享管理</span></li>
+            <li><span>生活点滴管理</span></li>
+            <li><span>博客推荐管理</span></li>
+            <li><span>关于我管理</span></li>
+            <li><span>网站皮肤更换</span></li>
+        </ul>
+    </div>
+    <!--end_admin_nav-->
+    <!--admin_content-->
+    <div class="admin_content">
+        <ul>
+            <li>
+                <!--lb_recommend_share-->
+                <div class="lb_recommend_share">
+                    <ul>
+                        {foreach $results_learnShare as $value}
+                        <li data-id="{$value.id}" data-table="learn_Share">
+                            <div class="blog_title">
+                                <a>
+                                    <b>{$value.id}、</b>
+                                    <span>{$value.Title}</span>
+                                </a>
+                                <span class="time">{$value.Time}</span>
+                            </div>
+                            <img src="{$root}templates/admin/Images/delete.png" class="delete"/>
+                            <span class="ls_controll{if $value.ControllShow == 0} show {else} hide{/if}"><i></i></span>
+                            <span class="ls_delete"></span>
+                            <span class="ls_updata"></span>
+                            <!--edit-->
+                            <div class="edit">
+                                <ul class="edit_center">
+                                    <img src="{$root}templates/admin/Images/close_edit.png" class="close_edit"/>
+                                    <li><span>标题：</span><input type="text" name="Title" value='{$value.Title}' class="Title" /></li>
+                                    <li><span>副标题：</span><input type="text" value="{$value.SmallTitle}" class="SmallTitle" /></li>
+                                    <li><span>时间：</span><input type="date" value="{$value.Time}" class="datatime" /></li>
+                                    <li><span>作者：</span><input type="text" value="{$value.Author}" class="Author" /></li>
+                                    <li><span>内容：</span><textarea type="text" class="Content">{$value.Content}</textarea></li>
+                                    <li><input type="submit" value="确认修改" class="submit_edit"/></li>
+                                </ul>
+                            </div>
+                            <!--end_edit-->
+                        </li>
+                        {/foreach}
+                    </ul>
+                    <!--lb_recommend_share_page-->
+                    <div class="lb_recommend_share_page">
+                        <ul>
+                            <li><a href="{$root}learnShare/page_{if $page_learnShare>1}{$page_learnShare-1}{else}{1}{/if}/">上一页</a></li>
+                            {for $foo=1 to $pages_learnShare max=6}
+                                <li><a href="{$root}learnShare/page_{$foo}/" class="{if $foo==$page_learnShare}page On{else}page{/if}">{$foo}</a></li>
+                            {/for}
+                            <li><a href="{$root}learnShare/page_{if $page_learnShare<$pages_learnShare}{$page_learnShare+1}{else}{$pages_learnShare}{/if}/">下一页</a></li>
+                        </ul>
+                    </div>
+                    <!--end_lb_recommend_share_page-->
+                </div>
+                <!--end_lb_recommend_share-->
+            </li>
+            <li>
+                <!--lb_recommend_share-->
+                <div class="lb_recommend_share">
+                    <ul>
+                        {foreach $results_lifeDribs as $value}
+                        <li data-id="{$value.id}" data-table="life_Dribs">
+                            <div class="blog_title">
+                                <a>
+                                    <b>{$value.id}、</b>
+                                    <span>{$value.Title}</span>
+                                </a>
+                            </div>
+                            <span class="time">{$value.Time}</span>
+                            <img src="{$root}templates/admin/Images/delete.png" class="delete"/>
+                            <span class="ls_controll{if $value.ControllShow == 0} show {else} hide{/if}"><i></i></span>
+                            <span class="ls_delete"></span>
+                            <span class="ls_updata"></span>
+                            <!--edit-->
+                            <div class="edit">
+                                <ul class="edit_center">
+                                    <img src="{$root}templates/admin/Images/close_edit.png" class="close_edit"/>
+                                    <li><span>标题：</span><input type="text" name="Title" value='{$value.Title}' class="Title" /></li>
+                                    <li><span>副标题：</span><input type="text" value="{$value.SmallTitle}" class="SmallTitle" /></li>
+                                    <li><span>时间：</span><input type="date" value="{$value.Time}" class="datatime" /></li>
+                                    <li><span>作者：</span><input type="text" value="{$value.Author}" class="Author" /></li>
+                                    <li><span>内容：</span><textarea type="text" class="Content">{$value.Content}</textarea></li>
+                                    <li><input type="submit" value="确认修改" class="submit_edit"/></li>
+                                </ul>
+                            </div>
+                            <!--end_edit-->
+                        </li>
+                        {/foreach}
+                    </ul>
+                    <!--lb_recommend_share_page-->
+                    <div class="lb_recommend_share_page">
+                        <ul>
+                            <li><a href="{$root}lifeDribs/page_{if $page_lifeDribs>1}{$page_lifeDribs-1}{else}{1}{/if}/">上一页</a></li>
+                            {for $foo=1 to $pages_lifeDribs max=6}
+                            <li><a href="{$root}lifeDribs/page_{$foo}/" class="{if $foo==$page_lifeDribs}page On{else}page{/if}">{$foo}</a></li>
+                            {/for}
+                            <li><a href="{$root}lifeDribs/page_{if $page_lifeDribs<$pages_lifeDribs}{$page_lifeDribs+1}{else}{$pages_lifeDribs}{/if}/">下一页</a></li>
+                        </ul>
+                    </div>
+                    <!--end_lb_recommend_share_page-->
+                </div>
+                <!--end_lb_recommend_share-->
+            </li>
+            <li>
+                <!--excellentBlogs-->
+                <div class="excellentBlogs">
+                    <ul>
+                        <li>
+                            <span class="name">博客名</span>
+                            <span class="url">博客地址</span>
+                            <span class="email">博主邮箱</span>
+                            <span class="controll">是否推荐</span>
+                        </li>
+                        {foreach $excellent_blogs  as $value}
+                            <li data-id="{$value.id}">
+                                <span class="name">{$value.Title}</span>
+                                <span class="url">{$value.SiteUrl}</span>
+                                <span class="email">{$value.SiteEmail}</span>
+                                <span class="controll{if $value.ControllShow == 1} show {else} hide{/if}"><i></i></span>
+                                <span class="blogs_delete"></span>
+                                <span class="blogs_updata"></span>
+                            </li>
+                        {/foreach}
+                    </ul>
+                </div>
+                <!--end_excellentBlogs-->
+            </li>
+        </ul>
+    </div>
+    <!--end_admin_content-->
+</div>
+<!--end_center-->
+</body>
+</html>

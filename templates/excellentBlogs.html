@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张先森个人博客-博客推荐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
+    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
+    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{$root}/templates/Css/public.css"/>
+    <link rel="stylesheet" href="{$root}/templates/Css/excellentBlogs.css"/>
+    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
+    <script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
+    <script type="text/javascript" src="{$root}/templates/Js/excellentBlogs.js"></script>
+</head>
+{assign var='NavId' value='excellentBlogs'}
+<body>
+{include file='./canvasBackground.html'}
+<!--top-->
+<div class="top">
+    {include file='./topMenu.html'}
+</div>
+<!--end_top-->
+<!--center-->
+<div class="center">
+    <!--excellentBlogs_box-->
+    <div class="excellentBlogs_box">
+        <div class="excellentBlogs_box_title">
+            <span>优秀个人博客</span>
+            <dl class="openSubmitBolgs" id="openSubmitBolgs">提交链接</dl>
+        </div>
+        <ul>
+            {foreach $excellent_blogs as $value}
+                <li><a href="{$value.SiteUrl}" target="_blank">{$value.Title}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+    <span class="optimism">
+            成功的路上虽然艰辛，但你不是孤军奋战！
+    </span>
+    <!--end_excellentBlogs_box-->
+    <!---handIn_Sites--->
+    <div class="handIn_Sites" id="wind">
+        <form action="{$root}handInSite/" method="POST">
+            <div class="title" id="change_wind">
+                <span>提交链接</span>
+                <img src="{$root}/templates/Images/close.png" class="closeSubmitBolgs" id="closeSubmitBolgs"/>
+            </div>
+            <ul>
+                <li><input type="text" name="blog_name" placeholder="博客名：" class="blog_name"/></li>
+                <li><input type="text" name="blog_url" placeholder="博客地址：" class="blog_url"/></li>
+                <li><input type="text" name="blog_email" placeholder="博主邮箱：" class="blog_email"/></li>
+                <li><input type="submit" name="submit" value="确认提交" class="handInSite"/></li>
+            </ul>
+        </form>
+    </div>
+    <div class="cover"></div>
+    <!---end_handIn_Sites--->
+</div>
+<!--end_center-->
+<!--bottom-->
+<div class="bottom">
+    {include file='./bottomFoot.html'}
+</div>
+<!--end_bottom-->
+</body>
+</html>

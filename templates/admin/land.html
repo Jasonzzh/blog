@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <title>博客管理登录</title>
+    <link rel="stylesheet" href="{$root}templates/admin/Css/public.css"/>
+    <link rel="stylesheet" href="{$root}templates/admin/Css/land.css"/>
+    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="{$root}/templates/admin/Js/land.js"></script>
+</head>
+<body>
+<!------land------>
+<form action="{$root}admin/index/" method="POST" class="land">
+    <img src="{$root}templates/admin/Images/land.png" class="land_img"/>
+    <ul>
+        <li><input type="text" name="adminID" placeholder="账号：" id="adminID"/></li>
+        <li><input type="password" name="adminPW" placeholder="密码：" id="adminPW"/></li>
+        <li><input type="submit" name="submit" value="登陆" class="submit"/></li>
+    </ul>
+</form>
+<!------end_land------>
+</body>
+</html>

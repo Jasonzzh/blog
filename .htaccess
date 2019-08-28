@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^admin/$ index.php?controller=admin&method=land [NC,L]
+RewriteRule ^search/$ index.php?controller=interactive&method=search [NC,L]
+RewriteRule ^handInSite/$ index.php?controller=interactive&method=handInSite [NC,L]
+RewriteRule ^([a-z]+)/$ index.php?controller=index&method=$1 [NC,L]
+RewriteRule ^([_a-z]+)/([0-9]+)\.html$ index.php?controller=index&method=$1&id=$2 [NC,L]
+RewriteRule ^index_([0-9]+)/$ index.php?page=$1 [NC,L]
+RewriteRule ^([a-z]+)/page_([0-9]+)/$ index.php?controller=index&method=$1&page=$2 [NC,L]
+RewriteRule ^admin/([a-z]+)/$ index.php?controller=admin&method=$1 [NC,L]
+</IfModule>

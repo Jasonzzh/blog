@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/*-----center-----*/
+.center {width: 1200px;margin: 20px auto;background: #FFF;border-radius: 4px;box-shadow: 0 0 20px rgb(215,215,215);padding-bottom: 20px;}
+@media screen and (max-width:1200px){
+    .center{width:96%;}
+}
+/*admin_nav*/
+.admin_nav{width:96%;padding:30px 0 20px;margin:0 auto;border-bottom: 1px solid rgb(186,186,186);}
+.admin_nav>ul>li{display: inline-block;font-size: 16px;cursor: pointer;padding: 6px 14px;border-radius: 4px;color:#484848;}
+.admin_nav>ul>li+li{margin-left:20px;}
+.admin_nav>ul>li:hover{background: #000;color: #FFF;}
+.li_cur{background: #000 !important;color: #FFF !important;}
+/*end_admin_nav*/
+/*----admin_content----*/
+/*lb_recommend_share*/
+.lb_recommend_share{width: 96%;background: #FFF;padding-top: 20px;border-radius: 4px;margin: 0 auto;}
+.lb_recommend_share>ul{width:100%;margin-top:20px;padding-bottom:20px;}
+.lb_recommend_share>ul>li{width: 95%;padding:15px 2.5% 20px;margin: 0 auto 20px;border-bottom: 1px dashed #eee;position:relative;transition:all 0.3s ease;cursor:pointer;}
+.lb_recommend_share>ul>li .blog_title{width:60%;}
+.lb_recommend_share>ul>li .blog_title a{width: 100%;font-size: 16px;color: #333;font-weight: bold;margin-bottom: 10px;overflow: hidden;text-overflow: ellipsis;-webkit-box-orient: vertical;display: -webkit-box;-webkit-line-clamp: 1;}
+.lb_recommend_share>ul>li .blog_title a b{color:#F00;}
+.lb_recommend_share>ul>li .time{display: block;width:60%;text-indent: 34px;font-size: 14px;}
+.lb_recommend_share>ul>li:hover{box-shadow: 0 0 10px rgb(234,234,234);}
+.lb_recommend_share>ul>li:hover .blog_title a{color:#20B2AA;}
+.delete{position: absolute;right: -14px;top: -14px;width: 30px;cursor: pointer;box-shadow: 0 0 10px rgb(190,190,190);border-radius: 50%;opacity:0;transition:all 0.15s;}
+.lb_recommend_share>ul>li:hover .delete{opacity:1;}
+.ls_delete{display: block;height: 26px;width: 26px;float: right;background: url(../Images/blog_delete1.png) no-repeat;background-size: auto 100%;position: absolute;bottom: 28px;right: 130px;cursor: pointer;}
+.ls_updata{display: block;height: 26px;width: 26px;float: right;background: url(../Images/blog_updata1.png) no-repeat;background-size: auto 100%;position: absolute;bottom: 28px;right: 195px;cursor: pointer;}
+.ls_delete:hover{background: url(../Images/blog_delete2.png) no-repeat;background-size: auto 100%;}
+.ls_updata:hover{background: url(../Images/blog_updata2.png) no-repeat;background-size: auto 100%;}
+.ls_controll{display: block;width: 42px;height: 22px;background: #FFF;border: 1.5px solid rgb(220,220,220);border-radius: 14px;position: absolute;bottom: 28px;right: 36px;cursor: pointer;transition: all 0.3s;}
+.ls_controll>i{display: block;width: 22px;height: 22px;box-shadow: 0 0 10px rgb(185,185,185);border-radius: 50%;position: relative;top:0;left:0;background: #FFF;transition:all 0.3s;}
+.show{animation:show 0.2s;border: 1.5px solid  #66CDAA !important;background: #66CDAA !important;}
+.show i{left:20px!important;}
+/*end_lb_recommend_share*/
+/*lb_recommend_share_page*/
+.lb_recommend_share_page{width: 100%;text-align:center;margin:20px 0 10px;}
+.lb_recommend_share_page>ul>li{display:inline-block;margin: 0 5px;}
+.lb_recommend_share_page>ul>li a{display:block;padding: 5px 10px;background: #F7F7F7;color: #333;}
+.lb_recommend_share_page>ul>li a:hover{background:#333;color:#FFF;}
+.lb_recommend_share_page>ul>li a.On{background:#333;color:#FFF;}
+/*end_lb_recommend_share_page*/
+/*excellentBlogs*/
+.excellentBlogs{width:96%;margin:0 auto;position:relative;}
+.excellentBlogs>ul>li{width: 100%;line-height: 42px;height: 42px;border-bottom: 1px dashed rgb(210,210,210);font-size: 15px;color: #666;}
+.excellentBlogs>ul>li:first-child .controll{ display: block;float: right;}
+.name{width: 20%;display: block;float: left;overflow:hidden;}
+.url{width: 25%;display: block;float: left;}
+.email{width: 25%;display: block;float: left;}
+.excellentBlogs>ul>li+li .controll{display: block;width: 42px;height: 22px;background: #FFF;float: right;border: 1.5px solid rgb(220,220,220);border-radius: 14px;position: relative;top: 8px;cursor: pointer;transition:all 0.3s;}
+.excellentBlogs>ul>li+li .controll>i{display: block;width: 22px;height: 22px;box-shadow: 0 0 10px rgb(185,185,185);border-radius: 50%;position: relative;top:0;left:0;background: #FFF;transition:all 0.3s;}
+.show{animation:show 0.2s;border: 1.5px solid  #66CDAA !important;background: #66CDAA !important;}
+.show i{left:20px!important;}
+.blogs_delete{display: block;height: 26px;width: 26px;float: right;background: url(../Images/blog_delete1.png) no-repeat;background-size: auto 100%;position: relative;top: 8px;cursor: pointer;margin-right:50px;}
+.blogs_updata{display: block;height: 26px;width: 26px;float: right;background: url(../Images/blog_updata1.png) no-repeat;background-size: auto 100%;position: relative;top: 8px;cursor: pointer;margin-right:30px;}
+.blogs_delete:hover{background: url(../Images/blog_delete2.png) no-repeat;background-size: auto 100%;}
+.blogs_updata:hover{background: url(../Images/blog_updata2.png) no-repeat;background-size: auto 100%;}
+/*end_excellentBlogs*/
+/*edit*/
+.edit{width:100%;height:100%;position:fixed;top:0;left:0;z-index: 999;background: rgba(0,0,0,0.5);display:none;}
+.edit_center{position:absolute;width: 600px;height: 460px;margin-left: -300px;margin-top: -230px;left: 50%;top: 50%;background: #FFF;border-radius: 6px;}
+.edit_center>li{width:86%;margin: 15px auto 0;position:relative;overflow: hidden;}
+.edit_center>li:nth-child(2){margin-top:38px;}
+.edit_center>li>span{display:block;width:14%;height:32px;line-height:32px;font-size:16px;float:left;}
+.edit_center>li input{width: 76%;height: 32px;float: left;border-radius: 4px;border: 1px solid rgb(185,185,185);font-size: 14px;outline:none;}
+.edit_center>li input[type="text"]{text-indent: 10px;}
+.edit_center>li input[type="submit"]{width: 100px;background: #000;color: #FFF;text-align: center;border: 0;text-indent: 0;letter-spacing: 1px;cursor:pointer;float: inherit;display: block;margin: 0 auto;}
+.edit_center>li textarea{width: 76%;height: 160px;border-radius: 4px;outline: none;resize: none;line-height: 24px;font-size: 15px;}
+.close_edit{position: absolute;right: 0;top: 0;width: 40px;}
+.edit_center_cur{display:block;animation:shake 0.3s;}
+@keyframes shake {
+    0% {transform: scale(0.5);}
+    45% {transform: scale(1.05);}
+    80% {transform: scale(.95);}
+    100% {transform: scale(1);}
+}
+/*end_edit*/
+/*----end_admin_content----*/
+/*-----end_center-----*/

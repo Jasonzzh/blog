@@ -1,0 +1,31 @@
+<!------top_center//网站公共头部------>
+<div class="top_center">
+    <!--logo-->
+    <div class="logo">
+        <a href="{$root}"><img src="{$root}/templates/Images/top_logo.png"/></a>
+    </div>
+    <!--end_logo-->
+    <!--top_search-->
+    <div class="top_search">
+        <img src="{$root}/templates/Images/search.png"/>
+        <div class="top_search_box">
+            <form action="{$root}search/" method="POST" class="search_form" id="search_form">
+                <input type="text" name="keyWords" class="input_words" placeholder="请输入关键字"/>
+                <input type="submit" value="搜索" class="search_submit"/>
+            </form>
+        </div>
+    </div>
+    <!--end_top_search-->
+    <!--top_nav-->
+    <img src="{$root}/templates/Images/menu.png" class="top_nav_open"/>
+    <div class="close_window"></div>
+    <div class="top_nav" id="top_nav">
+        <ul>
+            {foreach $nav as $value}
+                <li class="{if $value.name != '博客首页'}menuChildren{/if} {if $value.NavId == $NavId}on{/if}"><a href="{$root}{$value.url}">{$value.name}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+    <!--end_top_nav-->
+</div>
+<!------end_top_center------>

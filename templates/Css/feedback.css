@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*------------center----------*/
+.center{width:1200px;margin:80px auto 20px;overflow:hidden;position:relative;background: #FFF;border-radius: 4px;padding-bottom: 60px;min-height: 400px;}
+@media screen and (max-width:1200px){
+    .center{width:96%;}
+}
+/*feedback*/
+.feedback{width:100%;}
+/*end_feedback*/
+/*-----------end_center--------*/
