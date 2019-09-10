@@ -1,3 +1,5 @@
+// const httpUrl = 'http://www.zhangqinblog.com/'; // 线上
+const httpUrl = 'http://localhost/newBlog/'; // 本地
 /*---lb_view---*/
 $(function(){
     var Readbox = $(".ReadCount");
@@ -5,7 +7,7 @@ $(function(){
     var id = parseInt(Readbox.children("span").attr('data-id'),10);
     Readbox.children("span").text(ReadCount);
     function Read(dataTable,key,ReadCount,id){
-        $.post("http://localhost/newBlog/index.php?controller=interactive&method=changeValue",{
+        $.post(httpUrl+"index.php?controller=interactive&method=changeValue",{
                 dataTable:dataTable,
                 key:key,
                 keyValue:ReadCount,

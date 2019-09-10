@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="skin{foreach $skin as $value}{$value.ClassName}{/foreach}">
 <head>
     <meta charset="UTF-8">
     <title>关于我</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
-    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
-    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon" />
+    {foreach $seo_data as $value}
+    <meta name="keywords" content="{$value.keywords}" />
+    <meta name="description" content="{$value.description}"/>
+    {/foreach}
+    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="{$root}/templates/Css/public.css"/>
     <link rel="stylesheet" href="{$root}/templates/Css/aboutMe.css"/>
-    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/aboutMe.js"></script>
 </head>
 {assign var='NavId' value='aboutMe'}
 <body>
@@ -26,18 +24,20 @@
 <div class="center">
     <!--aboutMe-->
     <div class="aboutMe">
+        {foreach $about_me as $value}
         <div class="aboutMe_title">
             <i>
-                <a href="index.php"><img src="{$root}/templates/Images/back_logo.jpg"/></a>
+                <a href="{$root}"><img src="{$root}/templates/Images/back_logo.jpg"/></a>
             </i>
-            <span class="aboutMe_title1">张中华</span>
-            <span class="aboutMe_title2">一个95后的菜鸟程序员、前端开发工程师、phper、爱技术、爱生活。</span>
-            <span class="aboutMe_title3">正在码农的路上摸爬滚打</span>
+            <span class="aboutMe_title1">{$value.Name}</span>
+            <span class="aboutMe_title2">{$value.Title}</span>
+            <span class="aboutMe_title3">{$value.SmallTitle}</span>
         </div>
         <div class="aboutMe_content">
             <span class="aboutMe_content_title"></span>
-            <span class="aboutMe_content_text">张中华 男 一个95后的大三在校生，大学生活过的很迷茫。大二一次网站的课设勾起了我对前端的兴趣。于是便入坑了。前端的路并不好走，更新也很快，要不断的去学习。需要很大的毅力。希望自己能在这条路上坚持下去。自己现在也是最迷茫的时期。在学习前端的过程中，有很多提供学习的渠道。像w3c,慕课网，网易云课堂，菜鸟教程。还有很多博客。这个博客的UI我是仿的杨青个人博客做的，之前那个也是仿她的，她的博客写的很不错，UI设计的也很好。这个博客的响应式布局设计的也非常好。总之做什么事情都是不容易的，人活着就是一件很不容的事情。随着年龄的增长会发现你身上的责任不断地增多（虽然我还小）希望自己能坚持下去，勿忘心安。有同路的一起相互学习可以互友</span>
+            <span class="aboutMe_content_text">{$value.Content}</span>
         </div>
+        {/foreach}
     </div>
     <!--end_aboutMe-->
 </div>
@@ -47,5 +47,14 @@
     {include file='./bottomFoot.html'}
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    {include file='./sideWindow.html'}
+</div>
+<!--end_sideWindow-->
+<script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/aboutMe.js"></script>
 </body>
 </html>

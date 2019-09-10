@@ -7,7 +7,11 @@ i,em,cite { font-style: normal; }
 body{-webkit-text-size-adjust:none;/* 谷歌不支持12px以下字号 */ font-family:"微软雅黑";}
 a{text-decoration: none; }
 .clear,.cle{clear:both;}
-a,area{blr:expression(this.onFocus=this.blur()) }/*  去掉IE下链接虚线框 */
 a:focus{outline: none; }/* 去掉火狐下链接虚线框 */
-html{width: 100%;background: #E9EAED;min-width:320px;}
+html{width: 100%;;min-width:320px;}
 /*---public--*/
+/*---skin---*/
+.skin1{background:#E9EAED;}
+.skin2{background:#215d5d6e;}
+.skin3{background:#215d5d;}
+/*---end_skin---*/

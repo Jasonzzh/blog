@@ -1,16 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" class="skin{foreach $skin as $value}{$value.ClassName}{/foreach}">
 <head>
     <meta charset="UTF-8">
     <title>搜索结果</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
-    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
-    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon" />
+    {foreach $seo_data as $value}
+    <meta name="keywords" content="{$value.keywords}" />
+    <meta name="description" content="{$value.description}"/>
+    {/foreach}
+    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="{$root}/templates/Css/public.css"/>
     <link rel="stylesheet" href="{$root}/templates/Css/searchResult.css"/>
-    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/searchResult.js"></script>
 </head>
 {assign var='NavId' value='searchResult'}
 <body>
@@ -30,7 +30,7 @@
             <ul>
                 {foreach $result_life_dribs as $value}
                     {if $value !== ''}
-                        <li data-scroll-reveal='enter bottom over 1s'>
+                        <li data-scroll-reveal='enter bottom over 1s' data-table="life_dribs">
                             <div class="blog_title">
                                 <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank">
                                     <span>{$value.Title}</span>
@@ -42,21 +42,21 @@
                                         <img src="{$root}/{$value.SmallImageUrl}" title="{$value.Title}"/>
                                     </a>
                                 </i>
-                                <span class="blog_text">{$value.Content}</span>
+                                <span class="blog_text">{$value.Introduce}</span>
                                 <span class="blog_info">
-                                        <span class="author">{$value.Author}</span>
-                                        <span class="time">{$value.Time}</span>
-                                        <span class="see"><img src="{$root}/templates/Images/see.png"/><span>{$value.ReadCount}</span></span>
-                                        <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span title="{$value.id}">{$value.ClickLike}</span></span>
-                                        <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank" class="readMore">阅读文章</a>
-                                    </span>
+                                    <span class="author">{$value.Author}</span>
+                                    <span class="time">{$value.Time}</span>
+                                    <span class="see"><img src="{$root}/templates/Images/see.png"/><span>{$value.ReadCount}</span></span>
+                                    <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span data-id="{$value.id}">{$value.ClickLike}</span></span>
+                                    <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank" class="readMore">阅读文章</a>
+                                </span>
                             </div>
                         </li>
                     {/if}
                 {/foreach}
                 {foreach $result_learn_share as $value}
                     {if $value !== ''}
-                        <li data-scroll-reveal='enter bottom over 1s'>
+                        <li data-scroll-reveal='enter bottom over 1s' data-table="learn_share">
                             <div class="blog_title">
                                 <a href="{$root}learnShare_View/{$value.id}.html" target="_blank">
                                     <span>{$value.Title}</span>
@@ -68,14 +68,14 @@
                                         <img src="{$root}/{$value.SmallImageUrl}" title="{$value.Title}"/>
                                     </a>
                                 </i>
-                                <span class="blog_text">{$value.Content}</span>
+                                <span class="blog_text">{$value.Introduce}</span>
                                 <span class="blog_info">
-                                        <span class="author">{$value.Author}</span>
-                                        <span class="time">{$value.Time}</span>
-                                        <span class="see"><img src="{$root}/templates/Images/see.png"/><span>{$value.ReadCount}</span></span>
-                                        <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span title="{$value.id}">{$value.ClickLike}</span></span>
-                                        <a href="{$root}learnShare_View/{$value.id}.html" target="_blank" class="readMore">阅读文章</a>
-                                    </span>
+                                    <span class="author">{$value.Author}</span>
+                                    <span class="time">{$value.Time}</span>
+                                    <span class="see"><img src="{$root}/templates/Images/see.png"/><span>{$value.ReadCount}</span></span>
+                                    <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span data-id="{$value.id}">{$value.ClickLike}</span></span>
+                                    <a href="{$root}learnShare_View/{$value.id}.html" target="_blank" class="readMore">阅读文章</a>
+                                </span>
                             </div>
                         </li>
                 {/if}
@@ -100,7 +100,7 @@
             <ul class="contact_link">
                 <li>
                     <a href="{$root}" target="_self" class="iconfont home" title="张先森个人博客"></a>
-                </li><!--seo关键字//单独建表-->
+                </li>
                 <li>
                     <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=987354940@qq.com" target="_blank" class="iconfont Email" title="邮箱"></a>
                 </li>
@@ -108,8 +108,8 @@
                     <a href="tencent://Message/?Uin=987354940&websiteName=www.oicqzone.com&Menu=yes" target="_blank" class="iconfont qq"  title="qq"></a>
                 </li>
                 <li>
-                    <a href="" target="_blank" class="iconfont weixin"  title="关注我的微信"></a>
-                    <img src=""/>
+                    <a href="javascript:void(0)" class="iconfont weixin"  title="关注我的微信"></a>
+                    <img src="{$root}/templates/Images/weixin_code.png" class="codeImg"/>
                 </li>
             </ul>
         </div>
@@ -173,5 +173,14 @@
     {include file='./bottomFoot.html'}
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    {include file='./sideWindow.html'}
+</div>
+<!--end_sideWindow-->
+<script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/searchResult.js"></script>
 </body>
 </html>

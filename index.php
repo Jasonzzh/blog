@@ -1,5 +1,5 @@
 <?php
-    header("Content-type:text/html;charset=utf-8");
+    header('Content-Type: text/html;charset=utf-8');
     //ini_set("error_reporting","E_ALL & ~E_NOTICE");
     ini_set('date.timezone','Asia/Shanghai');//时间设置
     require_once('./function/function.php');

@@ -1,3 +1,5 @@
+// const httpUrl = 'http://www.zhangqinblog.com/'; // 线上
+const httpUrl = 'http://localhost/newBlog/'; // 本地
 /*---banner---*/
 $(function(){
     var index = 1;
@@ -56,16 +58,16 @@ $(function(){
     function likeif(clickCount,id,e,data_table){
         if(e.hasClass("niceOn")){
             clickCount = parseInt(e.children("span").text(),10)-1;
-            id =  parseInt(e.children("span").attr("data-id"),10);
+            id = parseInt(e.children("span").attr("data-id"),10);
             e.children("span").text(clickCount);
-            e.children("img").attr("src","http://localhost/newBlog/templates/Images/giveLike.png");
+            e.children("img").attr("src",httpUrl+"templates/Images/giveLike.png");
             e.removeClass("niceOn");
         }
         else{
             clickCount = parseInt(e.children("span").text(),10)+1;
-            id =  parseInt(e.children("span").attr("data-id"),10);
+            id = parseInt(e.children("span").attr("data-id"),10);
             e.children("span").text(clickCount);
-            e.children("img").attr("src","http://localhost/newBlog/templates/Images/giveLike_On.png");
+            e.children("img").attr("src",httpUrl+"templates/Images/giveLike_On.png");
             e.addClass("niceOn");
         }
         giveLk(data_table,'ClickLike',clickCount,id);
@@ -79,7 +81,7 @@ $(function(){
         likeif(clickCount,id,e,'life_dribs');
     });
     function giveLk(dataTable,key,clickCount,id){
-        $.post("http://localhost/newBlog/index.php?controller=interactive&method=changeValue",{
+        $.post(httpUrl+"index.php?controller=interactive&method=changeValue",{
             dataTable:dataTable,
             key:key,
             keyValue:clickCount,

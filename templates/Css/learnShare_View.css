@@ -19,7 +19,7 @@
 .lb_view_time{display: inline-block;color: rgb(153,153,153);font-size: 14px;}
 .ReadCount{font-size: 14px;color: rgb(153,153,153);margin-left: 24px;}
 .ReadCount img{width: 24px;margin-right: 4px;}
-.lb_view_text{display: block;margin-top: 30px;font-size: 16px;line-height: 25px;color: rgb(85,85,85);}
+.lb_view_text{display: block;margin-top: 20px;font-size: 15px;line-height: 25px;color: rgb(85,85,85);-webkit-overflow-scrolling: touch;overflow-scrolling: touch;}
 /*end_lb_view*/
 /*lb_comment*/
 .lb_comment{width: 100%;background: #FFF;margin-top: 20px;border-radius: 4px;padding-top: 20px;padding-bottom: 40px;}

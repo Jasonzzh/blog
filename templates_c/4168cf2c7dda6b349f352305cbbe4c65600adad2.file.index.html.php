@@ -1,25 +1,29 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-04-28 01:06:38
+<?php /* Smarty version Smarty-3.1.16, created on 2019-09-09 12:14:05
          compiled from "templates\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:286315cc48c1e957b78-38608843%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:305065d7236b6aa9de7-47517010%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '4168cf2c7dda6b349f352305cbbe4c65600adad2' => 
     array (
       0 => 'templates\\index.html',
-      1 => 1555906543,
+      1 => 1568002442,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '286315cc48c1e957b78-38608843',
+  'nocache_hash' => '305065d7236b6aa9de7-47517010',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5d7236b6b5e021_44812742',
   'variables' => 
   array (
+    'skin' => 0,
+    'value' => 0,
+    'seo_data' => 0,
     'root' => 0,
     'life_dribs' => 0,
-    'value' => 0,
     'learn_share' => 0,
     'results_index' => 0,
     'page_index' => 0,
@@ -29,29 +33,34 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'excellent_blogs' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_5cc48c1eb58491_78730535',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5cc48c1eb58491_78730535')) {function content_5cc48c1eb58491_78730535($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="en">
+<?php if ($_valid && !is_callable('content_5d7236b6b5e021_44812742')) {function content_5d7236b6b5e021_44812742($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="en" class="skin<?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['skin']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
+$_smarty_tpl->tpl_vars['value']->_loop = true;
+?><?php echo $_smarty_tpl->tpl_vars['value']->value['ClassName'];?>
+<?php } ?>">
 <head>
     <meta charset="UTF-8">
-    <title>张先森个人博客</title>
+    <title>张先森个人博客_一个程序员的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
-    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
+    <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['seo_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
+$_smarty_tpl->tpl_vars['value']->_loop = true;
+?>
+    <meta name="keywords" content="<?php echo $_smarty_tpl->tpl_vars['value']->value['keywords'];?>
+" />
+    <meta name="description" content="<?php echo $_smarty_tpl->tpl_vars['value']->value['description'];?>
+"/>
+    <?php } ?>
+    <link rel="icon" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Css/public.css"/>
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Css/index.css"/>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/scrollReveal.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/public.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/index.js"></script>
 </head>
 <?php $_smarty_tpl->tpl_vars['NavId'] = new Smarty_variable('index', null, 0);?>
 <body>
@@ -143,7 +152,7 @@ learnShare_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
                     </i>
                     <b><?php echo $_smarty_tpl->tpl_vars['value']->value['Title'];?>
 </b>
-                    <span class="content"><?php echo $_smarty_tpl->tpl_vars['value']->value['Content'];?>
+                    <span class="content"><?php echo $_smarty_tpl->tpl_vars['value']->value['Introduce'];?>
 </span>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 learnShare_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
@@ -188,7 +197,7 @@ lifeDribs_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
 "/>
                             </a>
                         </i>
-                        <span class="blog_text"><?php echo $_smarty_tpl->tpl_vars['value']->value['Content'];?>
+                        <span class="blog_text"><?php echo $_smarty_tpl->tpl_vars['value']->value['Introduce'];?>
 </span>
                         <span class="blog_info">
                             <span class="author"><?php echo $_smarty_tpl->tpl_vars['value']->value['Author'];?>
@@ -260,7 +269,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                 <li>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 " target="_self" class="iconfont home" title="张先森个人博客"></a>
-                </li><!--seo关键字//单独建表-->
+                </li>
                 <li>
                     <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=987354940@qq.com" target="_blank" class="iconfont Email" title="邮箱"></a>
                 </li>
@@ -268,9 +277,11 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                     <a href="tencent://Message/?Uin=987354940&websiteName=www.oicqzone.com&Menu=yes" target="_blank" class="iconfont qq"  title="qq"></a>
                 </li>
                 <li>
-                    <a href="" target="_blank" class="iconfont weixin"  title="关注我的微信"></a>
-                    <img src=""/>
+                    <a href="javascript:void(0)" class="iconfont weixin"  title="关注我的微信"></a>
+                    <img src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Images/weixin_code.png" class="codeImg"/>
                 </li>
+                <div class="clear"></div>
             </ul>
         </div>
         <!--end_myself_card-->
@@ -358,5 +369,19 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    <?php echo $_smarty_tpl->getSubTemplate ('./sideWindow.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+</div>
+<!--end_sideWindow-->
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/scrollReveal.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/public.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/index.js"></script>
 </body>
 </html><?php }} ?>

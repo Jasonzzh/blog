@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="skin{foreach $skin as $value}{if $value.CurClass == 1}{$value.ClassName}{/if}{/foreach}">
 <head>
     <meta charset="UTF-8">
     <title>博客后台管理</title>
@@ -20,7 +20,7 @@
             <li class="li_cur"><span>学习分享管理</span></li>
             <li><span>生活点滴管理</span></li>
             <li><span>博客推荐管理</span></li>
-            <li><span>关于我管理</span></li>
+            <li style="display:none;"><span>关于我管理</span></li>
             <li><span>网站皮肤更换</span></li>
         </ul>
     </div>
@@ -33,10 +33,10 @@
                 <div class="lb_recommend_share">
                     <ul>
                         {foreach $results_learnShare as $value}
-                        <li data-id="{$value.id}" data-table="learn_Share">
+                        <li data-id="{$value.id}" data-table="learn_share">
                             <div class="blog_title">
                                 <a>
-                                    <b>{$value.id}、</b>
+                                    <b>{$value@key+1}、</b>
                                     <span>{$value.Title}</span>
                                 </a>
                                 <span class="time">{$value.Time}</span>
@@ -54,7 +54,7 @@
                                     <li><span>时间：</span><input type="date" value="{$value.Time}" class="datatime" /></li>
                                     <li><span>作者：</span><input type="text" value="{$value.Author}" class="Author" /></li>
                                     <li><span>内容：</span><textarea type="text" class="Content">{$value.Content}</textarea></li>
-                                    <li><input type="submit" value="确认修改" class="submit_edit"/></li>
+                                    <li class="button"><input type="submit" value="确认修改" class="submit_edit"/><input type="submit" value="添加" class="submit_add"/></li>
                                 </ul>
                             </div>
                             <!--end_edit-->
@@ -80,10 +80,10 @@
                 <div class="lb_recommend_share">
                     <ul>
                         {foreach $results_lifeDribs as $value}
-                        <li data-id="{$value.id}" data-table="life_Dribs">
+                        <li data-id="{$value.id}" data-table="life_dribs">
                             <div class="blog_title">
                                 <a>
-                                    <b>{$value.id}、</b>
+                                    <b>{$value@key+1}、</b>
                                     <span>{$value.Title}</span>
                                 </a>
                             </div>
@@ -101,7 +101,7 @@
                                     <li><span>时间：</span><input type="date" value="{$value.Time}" class="datatime" /></li>
                                     <li><span>作者：</span><input type="text" value="{$value.Author}" class="Author" /></li>
                                     <li><span>内容：</span><textarea type="text" class="Content">{$value.Content}</textarea></li>
-                                    <li><input type="submit" value="确认修改" class="submit_edit"/></li>
+                                    <li class="button"><input type="submit" value="确认修改" class="submit_edit"/><input type="submit" value="添加" class="submit_add"/></li>
                                 </ul>
                             </div>
                             <!--end_edit-->
@@ -140,11 +140,34 @@
                                 <span class="controll{if $value.ControllShow == 1} show {else} hide{/if}"><i></i></span>
                                 <span class="blogs_delete"></span>
                                 <span class="blogs_updata"></span>
+                                <!--editblogs-->
+                                <div class="editblogs">
+                                    <ul class="editblogs_center">
+                                        <img src="{$root}templates/admin/Images/close_edit.png" class="close_editblogs"/>
+                                        <li><span>博客名：</span><input type="text" name="Title" value='{$value.Title}' class="Title" /></li>
+                                        <li><span>博客地址：</span><input type="text" value="{$value.SiteUrl}" class="SiteUrl" /></li>
+                                        <li><span>博主邮箱：</span><input type="text" value="{$value.SiteEmail}" class="SiteEmail" /></li>
+                                        <li class="button"><input type="submit" value="确认修改" class="editblogs_edit"/><input type="submit" value="添加" class="editblogs_add"/></li>
+                                    </ul>
+                                </div>
+                                <!--end_editblogs-->
                             </li>
                         {/foreach}
                     </ul>
                 </div>
                 <!--end_excellentBlogs-->
+            </li>
+            <li style="display:none;"></li>
+            <li>
+                <!--blogBG_style-->
+                <div class="blogBG_style">
+                    <ul>
+                        {foreach $skin as $value}
+                            <li class="{if $value.CurClass==1}skin_cur{/if}" data-id="{$value.ClassName}"><img src="{$root}templates/admin/Images/{$value.SkinImage}"/></li>
+                        {/foreach}
+                    </ul>
+                </div>
+                <!--end_blogBG_style-->
             </li>
         </ul>
     </div>

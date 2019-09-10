@@ -1,3 +1,5 @@
+// const httpUrl = 'http://www.zhangqinblog.com/index.php?'; // 线上
+const httpUrl = 'http://localhost/newBlog/index.php?'; // 本地
 /*------admin_nav------*/
 $(function(){
     var navLi = $(".admin_nav>ul>li");
@@ -16,7 +18,7 @@ $(function(){
 /*public  ajax请求方法封装 */
 //ajax删除请求
 function DeleteData(dataTable,keywords,id){
-    $.post("http://localhost/newBlog/index.php?controller=admin&method=Delete",{
+    $.post(httpUrl+"controller=admin&method=Delete",{
             dataTable:dataTable,
             keywords:keywords,
             id:id
@@ -28,14 +30,14 @@ function DeleteData(dataTable,keywords,id){
 }
 //发送ajax请求更改后台控制显示关闭字段值
 function showHide(dataTable,key,keyValue,id){
-    $.post("http://localhost/newBlog/index.php?controller=interactive&method=changeValue",{
+    $.post(httpUrl+"controller=interactive&method=changeValue",{
             dataTable:dataTable,
             key:key,
-            keyValue:keyValue,
+            keyValue:parseInt(keyValue),
             id:id
         },
         function(data,status){
-            //alert("Data: " + data + "\nStatus: " + status);
+            console.log("Data: " + data + "\nStatus: " + status);
             return status;
     });
 }
@@ -72,6 +74,7 @@ $(function(){
 });
 /*end_lb_recommend_share*/
 /*excellentBlogs*/
+//博客推荐删除
 $(function(){
     $(".controll").on("click",function(){
         var id = parseInt($(this).parent().attr('data-id'),10);
@@ -94,6 +97,77 @@ $(function(){
         }
     })
 });
+$(function(){
+    $(".blogs_updata").on("click",function(){
+        $(this).next(".editblogs").show();
+        $(this).parent().find(".editblogs_center").addClass("editblogs_center_cur");
+    });
+    $(".close_editblogs").on("click",function(){
+        $(this).parents(".editblogs").hide();
+        $(this).parent().find(".editblogs_center").removeClass("editblogs_center_cur");
+    });
+    //博客推荐修改
+    $(".editblogs_edit").on("click",function(){
+        var id = $(this).parents(".editblogs").parent().attr('data-id');
+        var Title = $(this).parents(".editblogs_center").find(".Title").val();
+        var SiteUrl = $(this).parents(".editblogs_center").find(".SiteUrl").val();
+        var SiteEmail = $(this).parents(".editblogs_center").find(".SiteEmail").val();
+        if(confirm("是否确认修改此数据！")){
+            $(this).parents(".editblogs").hide();
+            $(this).parent().find(".editblogs_center").removeClass("editblogs_center_cur");
+            $(this).parents(".editblogs").prevAll(".name").text(Title);
+            alert("修改成功！");
+            $.ajax({
+                type:'post',
+                url:httpUrl+'controller=admin&method=blogsEdit',
+                data:{
+                    id:id,
+                    Title:Title,
+                    SiteUrl:SiteUrl,
+                    SiteEmail:SiteEmail
+                },
+                datatype:'Json',
+                success:function(data,status){
+                    //alert("Data: " + data + "\nStatus: " + status);
+                    return status;
+                },
+                error:function(status){
+                    alert("操作失败！请重新操作！")
+                    return status;
+                }
+            })
+        }
+    });
+    //博客推荐添加
+    $(".editblogs_add").on("click",function(){
+        var Title = $(this).parents(".editblogs_center").find(".Title").val();
+        var SiteUrl = $(this).parents(".editblogs_center").find(".SiteUrl").val();
+        var SiteEmail = $(this).parents(".editblogs_center").find(".SiteEmail").val();
+        if(confirm("是确认添加此数据！")){
+            $(this).parents(".editblogs").hide();
+            $(this).parent().find(".editblogs_center").removeClass("editblogs_center_cur");
+            alert("添加成功！");
+            $.ajax({
+                type:'post',
+                url:httpUrl+'controller=admin&method=InsetBlogSite',
+                data:{
+                    Title:Title,
+                    SiteUrl:SiteUrl,
+                    SiteEmail:SiteEmail
+                },
+                datatype:'Json',
+                success:function(data,status){
+                    //alert("Data: " + data + "\nStatus: " + status);
+                    return status;
+                },
+                error:function(status){
+                    alert("操作失败！请重新操作！")
+                    return status;
+                }
+            })
+        }
+    })
+})
 /*end_excellentBlogs*/
 /*edit*/
 $(function(){
@@ -105,6 +179,7 @@ $(function(){
         $(this).parents(".edit").hide();
         $(this).parent().find(".edit_center").removeClass("edit_center_cur");
     });
+    //文章修改
     $(".submit_edit").on("click",function(){
         var dataTable = $(this).parents(".edit").parent().attr('data-table');
         var id = $(this).parents(".edit").parent().attr('data-id');
@@ -113,21 +188,85 @@ $(function(){
         var datatime = $(this).parents(".edit_center").find(".datatime").val();
         var Author = $(this).parents(".edit_center").find(".Author").val();
         var Content = $(this).parents(".edit_center").find(".Content").val();
-        $(this).parents(".edit").prevAll(".blog_title").find("a>span").text(Title);
-        $(this).parents(".edit").hide();
-        $(this).parents(".edit").find(".edit_center").removeClass("edit_center_cur");
-        alert("修改成功！");
+        if(confirm("是否确认修改此数据！")){
+            $(this).parents(".edit").prevAll(".blog_title").find("a>span").text(Title);
+            $(this).parents(".edit").hide();
+            $(this).parents(".edit").find(".edit_center").removeClass("edit_center_cur");
+            alert("修改成功！");
+            $.ajax({
+                type:'post',
+                url:httpUrl+'controller=admin&method=updata',
+                data:{
+                    dataTable:dataTable,
+                    id:id,
+                    Title:Title,
+                    SmallTitle:SmallTitle,
+                    datatime:datatime,
+                    Author:Author,
+                    Content:Content
+                },
+                datatype:'Json',
+                success:function(data,status){
+                    //alert("Data: " + data + "\nStatus: " + status);
+                    return status;
+                },
+                error:function(status){
+                    alert("操作失败！请重新操作！")
+                    return status;
+                }
+            })
+        }
+    });
+    $(".submit_add").on("click",function(){
+        var dataTable = $(this).parents(".edit").parent().attr('data-table');
+        var Title = $(this).parents(".edit_center").find(".Title").val();
+        var SmallTitle = $(this).parents(".edit_center").find(".SmallTitle").val();
+        var datatime = $(this).parents(".edit_center").find(".datatime").val();
+        var Author = $(this).parents(".edit_center").find(".Author").val();
+        var Content = $(this).parents(".edit_center").find(".Content").val();
+        if(confirm("是否确认添加此数据！")){
+            $(this).parents(".edit").hide();
+            $(this).parents(".edit").find(".edit_center").removeClass("edit_center_cur");
+            alert("添加成功！");
+            $.ajax({
+                type:'post',
+                url:httpUrl+'controller=admin&method=Insert',
+                data:{
+                    dataTable:dataTable,
+                    Title:Title,
+                    SmallTitle:SmallTitle,
+                    datatime:datatime,
+                    Author:Author,
+                    Content:Content
+                },
+                datatype:'Json',
+                success:function(data,status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                    return status;
+                },
+                error:function(status){
+                    alert("操作失败！请重新操作！")
+                    return status;
+                }
+            })
+        }
+    })
+});
+/*end_edit*/
+/*blogBG_style*/
+//皮肤更换操作
+$(function(){
+    var ele = $(".blogBG_style>ul>li");
+    ele.on("click",function(){
+        $(this).addClass("skin_cur");
+        $(this).siblings().removeClass("skin_cur");
+        var id = parseInt($(this).attr('data-id'),10);
+        $("html").attr('class','skin'+id);
         $.ajax({
             type:'post',
-            url:'http://localhost/newBlog/index.php?controller=admin&method=updata',
+            url:httpUrl+'controller=admin&method=skinChange',
             data:{
-                dataTable:dataTable,
-                id:id,
-                Title:Title,
-                SmallTitle:SmallTitle,
-                datatime:datatime,
-                Author:Author,
-                Content:Content
+                id:id
             },
             datatype:'Json',
             success:function(data,status){
@@ -138,8 +277,8 @@ $(function(){
                 alert("操作失败！请重新操作！")
                 return status;
             }
-        })
-    })
-});
-/*end_edit*/
+        });
+    });
+})
+/*end_blogBG_style*/
 /*------end_admin_content------*/

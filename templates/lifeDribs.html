@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="skin{foreach $skin as $value}{$value.ClassName}{/foreach}">
 <head>
     <meta charset="UTF-8">
     <title>生活点滴</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
-    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon" />
+    {foreach $seo_data as $value}
+    <meta name="keywords" content="{$value.keywords}" />
+    <meta name="description" content="{$value.description}"/>
+    {/foreach}
+    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="{$root}/templates/Css/public.css"/>
     <link rel="stylesheet" href="{$root}/templates/Css/lifeDribs.css"/>
-    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/lifeDribs.js"></script>
 </head>
 {assign var='NavId' value='lifeDribs'}
 <body>
@@ -47,12 +44,12 @@
                         </i>
                         <span class="blog_text">{$value.Introduce}</span>
                         <span class="blog_info">
-                                <span class="author">{$value.Author}</span>
-                                <span class="time">{$value.Time}</span>
-                                <span class="see"><img src="{$root}/templates/Images/see.png"/><span>{$value.ReadCount}</span></span>
-                                <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span data-id="{$value.id}">{$value.ClickLike}</span></span>
-                                <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank" class="readMore">阅读文章</a>
-                            </span>
+                            <span class="author">{$value.Author}</span>
+                            <span class="time">{$value.Time}</span>
+                            <span class="see"><img src="{$root}/templates/Images/see.png"/><span>{$value.ReadCount}</span></span>
+                            <span class="giveLike"><img src="{$root}/templates/Images/giveLike.png"/><span data-id="{$value.id}">{$value.ClickLike}</span></span>
+                            <a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank" class="readMore">阅读文章</a>
+                        </span>
                     </div>
                 </li>
                 {/foreach}
@@ -133,5 +130,14 @@
     {include file='./bottomFoot.html'}
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    {include file='./sideWindow.html'}
+</div>
+<!--end_sideWindow-->
+<script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/lifeDribs.js"></script>
 </body>
 </html>

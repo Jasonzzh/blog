@@ -15,13 +15,21 @@
 .excellentBlogs_box>ul>li{display:block;float:left;margin: 10px 10px;background:#66CDAA;}
 .excellentBlogs_box>ul>li a{display:block;padding: 10px 30px;color:#FFF;font-size:16px;}
 .optimism{display: block;width: 96%;position: absolute;left: 2%;bottom: 40px;text-align: right;font-size: 20px;font-family: cursive;color: #66CDAA;text-shadow: 5px 5px 6px;}
+@media screen and (max-width:520px){
+    .excellentBlogs_box>ul {width: 98%;}
+    .excellentBlogs_box>ul>li {display: inline-block;width: 47%;margin: 5px 1.5%;}
+    .excellentBlogs_box>ul>li a {padding: 10px 0;font-size: 14px;}
+    .center {padding-bottom: 20px; min-height: auto;}
+    .excellentBlogs_box {padding-bottom: 0;}
+    .optimism {display: none;}
+}
 /*end_excellentBlogs_box*/
 /*handIn_Sites*/
 .cover{display:none;width:100%;height:100%;position:fixed;top:0;left:0;z-index:100;background-color:#000;opacity:0.5;}
 .handIn_Sites{display:none;position:fixed;background:white;width:350px;height:270px;top:50%;left:50%;margin-left:-175px;margin-top:-135px;z-index:101;}
 .handIn_Sites form ul{margin-top:50px;text-align:center;}
-.handIn_Sites form ul li{display:inline-block;float:bottom;margin-top:15px;list-style:none;}
-.handIn_Sites form ul li input{width:250px;height:30px;border:1px solid rgb(41,160,222);border-radius:5px;outline:none;}
+.handIn_Sites form ul li{display:inline-block;margin-top:15px;list-style:none;}
+.handIn_Sites form ul li input{width:250px;height:30px;border:1px solid rgb(41,160,222);border-radius:5px;outline:none;-webkit-appearance: none;}
 .handIn_Sites ul li input[name="submit"]{background:rgb(63,137,236);color:white;cursor:pointer;height:35px;}
 .handIn_Sites ul li input[name="submit"]:hover{background:rgb(68,144,247);}
 .handIn_Sites ul li input[name="submit"]:active{background:rgb(58,132,232);}

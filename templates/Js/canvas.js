@@ -13,7 +13,7 @@ window.onload = function(){
         this.speedY = randomNum(-3, 3) * 0.2;
     }
     Ball.prototype = {
-        //绘制小球
+//绘制小球
         draw: function () {
             ctx.beginPath();
             ctx.globalAlpha = 1;
@@ -21,11 +21,11 @@ window.onload = function(){
             ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
             ctx.fill();
         },
-        //小球移动
+//小球移动
         move: function () {
             this.x += this.speedX;
             this.y += this.speedY;
-            //为了合理性,设置极限值
+//为了合理性,设置极限值
             if (this.x <= 3 || this.x > canvas.width - 3) {
                 this.speedX *= -1;
             }
@@ -36,7 +36,7 @@ window.onload = function(){
     };
     //存储所有的小球
     var balls = [];
-    //创建150个小球
+    //创建200个小球
     for (var i = 0; i < 150; i++) {
         var ball = new Ball();
         balls.push(ball);
@@ -45,11 +45,11 @@ window.onload = function(){
 
     function main() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //鼠标移动绘制线
+//鼠标移动绘制线
         mouseLine();
-        //小球与小球之间自动画线
+//小球与小球之间自动画线
         drawLine();
-        //使用关键帧动画，不断的绘制和清除
+//使用关键帧动画，不断的绘制和清除
         window.requestAnimationFrame(main);
     }
     //添加鼠标移动事件

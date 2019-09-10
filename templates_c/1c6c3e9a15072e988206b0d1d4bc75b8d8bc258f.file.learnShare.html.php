@@ -1,25 +1,27 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-05-07 12:18:08
+<?php /* Smarty version Smarty-3.1.16, created on 2019-09-09 12:18:48
          compiled from "templates\learnShare.html" */ ?>
-<?php /*%%SmartyHeaderCode:242745cd1070081e0c6-26157161%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:177695d75d2a893c490-68940462%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1c6c3e9a15072e988206b0d1d4bc75b8d8bc258f' => 
     array (
       0 => 'templates\\learnShare.html',
-      1 => 1555746187,
+      1 => 1567763440,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '242745cd1070081e0c6-26157161',
+  'nocache_hash' => '177695d75d2a893c490-68940462',
   'function' => 
   array (
   ),
   'variables' => 
   array (
+    'skin' => 0,
+    'value' => 0,
+    'seo_data' => 0,
     'root' => 0,
     'results_learnShare' => 0,
-    'value' => 0,
     'page_learnShare' => 0,
     'pages_learnShare' => 0,
     'foo' => 0,
@@ -28,28 +30,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_5cd10700b07006_42932191',
+  'unifunc' => 'content_5d75d2a8a15b65_13251926',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5cd10700b07006_42932191')) {function content_5cd10700b07006_42932191($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="en">
+<?php if ($_valid && !is_callable('content_5d75d2a8a15b65_13251926')) {function content_5d75d2a8a15b65_13251926($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="en" class="skin<?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['skin']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
+$_smarty_tpl->tpl_vars['value']->_loop = true;
+?><?php echo $_smarty_tpl->tpl_vars['value']->value['ClassName'];?>
+<?php } ?>">
 <head>
     <meta charset="UTF-8">
     <title>学习分享</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
-    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
+    <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['seo_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
+$_smarty_tpl->tpl_vars['value']->_loop = true;
+?>
+    <meta name="keywords" content="<?php echo $_smarty_tpl->tpl_vars['value']->value['keywords'];?>
+" />
+    <meta name="description" content="<?php echo $_smarty_tpl->tpl_vars['value']->value['description'];?>
+"/>
+    <?php } ?>
+    <link rel="icon" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Css/public.css"/>
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Css/learnShare.css"/>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/scrollReveal.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/public.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Js/learnShare.js"></script>
 </head>
 <?php $_smarty_tpl->tpl_vars['NavId'] = new Smarty_variable('learnShare', null, 0);?>
 <body>
@@ -87,7 +96,7 @@ learnShare_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
                         </i>
                         <b><?php echo $_smarty_tpl->tpl_vars['value']->value['Title'];?>
 </b>
-                        <span class="content"><?php echo $_smarty_tpl->tpl_vars['value']->value['Content'];?>
+                        <span class="content"><?php echo $_smarty_tpl->tpl_vars['value']->value['Introduce'];?>
 </span>
                         <a href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 learnShare_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
@@ -212,5 +221,13 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 
 </div>
 <!--end_bottom-->
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/scrollReveal.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/public.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/templates/Js/learnShare.js"></script>
 </body>
 </html><?php }} ?>

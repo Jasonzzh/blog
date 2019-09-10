@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="skin{foreach $skin as $value}{$value.ClassName}{/foreach}">
 <head>
     <meta charset="UTF-8">
     <title>学习分享</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
-    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
-    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon" />
+    {foreach $seo_data as $value}
+    <meta name="keywords" content="{$value.keywords}" />
+    <meta name="description" content="{$value.description}"/>
+    {/foreach}
+    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="{$root}/templates/Css/public.css"/>
     <link rel="stylesheet" href="{$root}/templates/Css/learnShare.css"/>
-    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/learnShare.js"></script>
 </head>
 {assign var='NavId' value='learnShare'}
 <body>
@@ -120,5 +118,14 @@
     {include file='./bottomFoot.html'}
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    {include file='./sideWindow.html'}
+</div>
+<!--end_sideWindow-->
+<script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/learnShare.js"></script>
 </body>
 </html>

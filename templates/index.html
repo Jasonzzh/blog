@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="skin{foreach $skin as $value}{$value.ClassName}{/foreach}">
 <head>
     <meta charset="UTF-8">
-    <title>张先森个人博客</title>
+    <title>张先森个人博客_一个程序员的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人博客,张先森个人博客,张先森，个人网站" />
-    <meta name="description" content="张先森个人博客，是一个计算机系的在校生个人网站"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon" />
+    {foreach $seo_data as $value}
+    <meta name="keywords" content="{$value.keywords}" />
+    <meta name="description" content="{$value.description}"/>
+    {/foreach}
+    <link rel="icon" href="{$root}/templates/Images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="{$root}/templates/Css/public.css"/>
     <link rel="stylesheet" href="{$root}/templates/Css/index.css"/>
-    <script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
-    <script type="text/javascript" src="{$root}/templates/Js/index.js"></script>
 </head>
 {assign var='NavId' value='index'}
 <body>
@@ -48,7 +45,7 @@
         <!--lb_header-->
         <div class="lb_header">
             <ul>
-                {foreach $learn_share as $value}
+                {foreach $banner_data as $value}
                 {if $value@key < 2}
                 <li>
                     <a href="{$root}learnShare_View/{$value.id}.html" target="_blank">
@@ -143,7 +140,7 @@
             <ul class="contact_link">
                 <li>
                     <a href="{$root}" target="_self" class="iconfont home" title="张先森个人博客"></a>
-                </li><!--seo关键字//单独建表-->
+                </li>
                 <li>
                     <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=987354940@qq.com" target="_blank" class="iconfont Email" title="邮箱"></a>
                 </li>
@@ -151,9 +148,10 @@
                     <a href="tencent://Message/?Uin=987354940&websiteName=www.oicqzone.com&Menu=yes" target="_blank" class="iconfont qq"  title="qq"></a>
                 </li>
                 <li>
-                    <a href="" target="_blank" class="iconfont weixin"  title="关注我的微信"></a>
-                    <img src=""/>
+                    <a href="javascript:void(0)" class="iconfont weixin"  title="关注我的微信"></a>
+                    <img src="{$root}/templates/Images/weixin_code.png" class="codeImg"/>
                 </li>
+                <div class="clear"></div>
             </ul>
         </div>
         <!--end_myself_card-->
@@ -216,5 +214,14 @@
     {include file='./bottomFoot.html'}
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    {include file='./sideWindow.html'}
+</div>
+<!--end_sideWindow-->
+<script type="text/javascript" src="{$root}/templates/Js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/scrollReveal.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/public.js"></script>
+<script type="text/javascript" src="{$root}/templates/Js/index.js"></script>
 </body>
 </html>

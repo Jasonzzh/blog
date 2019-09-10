@@ -32,6 +32,15 @@
 .lb_recommend_share>ul>li:hover{box-shadow: 0 3px 5px rgb(234,234,234);}
 .lb_recommend_share>ul>li:hover .blog_title a{color:#20B2AA;}
 .lb_recommend_share>ul>li:hover .blog_content .blog_content_img img{transform:scale(1.05);}
+.niceOn img{animation:nice 0.3s;}
+@keyframes nice {
+    0%{transform:scale(1);}
+    20%{transform:scale(2);top:-5px;margin-right:4px;}
+    30%{transform:scale(1.58);top:-3px;margin-right:3px;}
+    50%{transform:scale(1.28);top:-2px;margin-right:2px;}
+    80%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
 @media screen and (max-width:480px){
     .lb_recommend_share>ul>li .blog_content .blog_text{max-height:80px;}
     .lb_recommend_share>ul>li .blog_content .blog_info .author{float: left;}
