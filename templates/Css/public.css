@@ -9,7 +9,9 @@ a{text-decoration: none; }
 .clear,.cle{clear:both;}
 a:focus{outline: none; }/* 去掉火狐下链接虚线框 */
 html{width: 100%;min-width:320px;}
+/*--- 畅言 ---*/
 #pop_ad,#feedAv,#MZADX_205186_test{display: none;}
+.cy-logo {background-size: 100% !important;}
 /*---public---*/
 /*---skin---*/
 .skin1{background:#E9EAED;}

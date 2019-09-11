@@ -24,7 +24,7 @@
 .lb_hot_share>ul>li>span.giveLike{display: block;float: right;margin-top: 14px;font-size: 14px;color: #999;line-height: 23px;cursor:pointer;}
 .lb_hot_share>ul>li>span.giveLike img{height: 20px;}
 .lb_hot_share>ul>li:hover{box-shadow: #ccc 1px 1px 8px;}
-.lb_hot_share>ul>li:hover>i img{transform: scale(1.05);}
+.lb_hot_share>ul>li:hover>i img{transform: scale(1.1);}
 .lb_hot_share>ul>li:hover>.readMore{color:#096;}
 .niceOn img{animation:nice 0.3s;}
 @keyframes nice {

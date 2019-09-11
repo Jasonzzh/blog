@@ -31,7 +31,7 @@
 .lb_recommend_share>ul>li .blog_content .blog_info .giveLike img{width: 26px;position: relative;top:3px;}
 .lb_recommend_share>ul>li:hover{box-shadow: 0 3px 5px rgb(234,234,234);}
 .lb_recommend_share>ul>li:hover .blog_title a{color:#20B2AA;}
-.lb_recommend_share>ul>li:hover .blog_content .blog_content_img img{transform:scale(1.05);}
+.lb_recommend_share>ul>li:hover .blog_content .blog_content_img img{transform:scale(1.1);}
 .niceOn img{animation:nice 0.3s;}
 @keyframes nice {
     0%{transform:scale(1);}
