@@ -49,10 +49,10 @@
             $common->init();
             $msg = M('mysql')->query($common->conn,M('news')->Insert($blog_name,$blog_url,$blog_email));
             if($msg) {
-                echo "<script>alert('提交成功！感谢您的推荐！');location.href='http://localhost/newBlog/excellentBlogs/'</script>";
+                echo "<script>alert('提交成功！请您等待博主审核！');location.href='http://www.zhangqinblog.com/excellentBlogs/'</script>";
             }
             else{
-                echo "<script>alert('对不起！提交失败！');location.href='http://localhost/newBlog/excellentBlogs/'</script>";
+                echo "<script>alert('对不起！提交失败！');location.href='http://www.zhangqinblog.com/excellentBlogs/'</script>";
             }
         }
     }

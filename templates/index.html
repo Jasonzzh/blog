@@ -28,7 +28,7 @@
         <div class="banner">
             <ul>
                 {foreach $life_dribs as $value}
-                   {if $value@key < 3}
+                   {if $value@key < 4}
                        <li class="slide"><a href="{$root}lifeDribs_View/{$value.id}.html" target="_blank"><img src="{$root}/{$value.SmallImageUrl}" title="{$value.Title}"/></a></li>
                    {/if}
                 {/foreach}

@@ -2,8 +2,13 @@
 const httpUrl = 'http://localhost/newBlog/'; // 本地
 /*---banner---*/
 $(function(){
-    var index = 1;
+    var index = 0;
     var $li = $(".banner>ul>li");
+    var banner = $('.banner').width();
+    var angle = 90;
+    var isClick = true;
+    $('.banner>ul>li').eq(0).css({transform: 'translateZ(-'+banner/2+'px) rotateY(180deg)'});
+    $('.banner>ul>li').eq(3).css({transform: 'translateZ('+banner/2+'px)'});
     /*----js动态按钮创建----*/
     function creatButton(){
         for(var a=0;a<$li.length;a++){
@@ -17,39 +22,57 @@ $(function(){
     }
     creatButton();
     function perv(){
-        $li.eq(index).fadeIn();
-        $li.eq(index).siblings().fadeOut();
-        $(".page_list>li").eq(index).addClass("active");
-        $(".page_list>li").eq(index).siblings().removeClass("active");
+        isClick = false;
+        angle += 90;
         index++;
         if(index >= $li.length){
             index = 0;
         }
-    }
-    function next(){
-        $li.eq(index).fadeIn();
-        $li.eq(index).siblings().fadeOut();
+        $('.banner>ul').css({'transform': 'rotateY('+angle+'deg)'});
         $(".page_list>li").eq(index).addClass("active");
         $(".page_list>li").eq(index).siblings().removeClass("active");
+        setTimeout(function () {
+            isClick = true;
+        },800)
+    }
+    function next(){
+        isClick = false;
+        angle -= 90;
         index--;
         if(index < 0){
             index = $li.length-1;
         }
+        $('.banner>ul').css({'transform': 'rotateY('+angle+'deg)'});
+        $(".page_list>li").eq(index).addClass("active");
+        $(".page_list>li").eq(index).siblings().removeClass("active");
+        setTimeout(function () {
+            isClick = true;
+        },800)
     }
     $(".page_prev").click(function(){
-        perv();
+        if(isClick) {
+            perv();
+        }
     });
     $(".page_next").click(function(){
-        next();
+        if(isClick) {
+            next();
+        }
     });
     $(".page_list>li").on("click",function(){
-        var tn = $(this).index();
+        var indexbefore = index;
+        index = $(this).index();
+        angle -= (index - indexbefore)*90;
+        $('.banner>ul').css({'transform': 'rotateY('+angle+'deg)'});
         $(this).addClass("active");
         $(this).siblings().removeClass("active");
-        $li.eq(tn).fadeIn();
-        $li.eq(tn).siblings().fadeOut();
     });
-    setInterval(perv,5000);
+    var timer = setInterval(next,3000);
+    $('.banner').hover(function () {
+        clearInterval(timer)
+    },function () {
+        timer = setInterval(next,3000);
+    })
 });
 /*---end_banner---*/
 /*---lb_hot_share//lb_recommend_share---*/

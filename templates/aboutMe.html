@@ -25,16 +25,7 @@
     <!--aboutMe-->
     <div class="aboutMe">
         {foreach $about_me as $value}
-        <div class="aboutMe_title">
-            <i>
-                <a href="{$root}"><img src="{$root}/templates/Images/back_logo.jpg"/></a>
-            </i>
-            <span class="aboutMe_title1">{$value.Name}</span>
-            <span class="aboutMe_title2">{$value.Title}</span>
-            <span class="aboutMe_title3">{$value.SmallTitle}</span>
-        </div>
         <div class="aboutMe_content">
-            <span class="aboutMe_content_title"></span>
             <span class="aboutMe_content_text">{$value.Content}</span>
         </div>
         {/foreach}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-09-09 12:14:05
+<?php /* Smarty version Smarty-3.1.16, created on 2019-09-12 11:26:45
          compiled from "templates\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:305065d7236b6aa9de7-47517010%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4168cf2c7dda6b349f352305cbbe4c65600adad2' => 
     array (
       0 => 'templates\\index.html',
-      1 => 1568002442,
+      1 => 1568258799,
       2 => 'file',
     ),
   ),
@@ -24,6 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'seo_data' => 0,
     'root' => 0,
     'life_dribs' => 0,
+    'banner_data' => 0,
     'learn_share' => 0,
     'results_index' => 0,
     'page_index' => 0,
@@ -84,7 +85,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
 $_smarty_tpl->tpl_vars['value']->_loop = true;
 ?>
-                   <?php if ($_smarty_tpl->tpl_vars['value']->key<3) {?>
+                   <?php if ($_smarty_tpl->tpl_vars['value']->key<4) {?>
                        <li class="slide"><a href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 lifeDribs_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
 .html" target="_blank"><img src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
@@ -107,7 +108,7 @@ lifeDribs_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
         <div class="lb_header">
             <ul>
                 <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['learn_share']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['banner_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
 $_smarty_tpl->tpl_vars['value']->_loop = true;
 ?>
@@ -131,7 +132,7 @@ learnShare_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
         <!--end_lb_header-->
         <!--lb_hot_share-->
         <div class="lb_hot_share">
-            <span class="lb_hot_share_title">学习分享</span>
+            <span class="lb_hot_share_title">技术分享</span>
             <ul>
                 <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['learn_share']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -169,7 +170,7 @@ learnShare_View/<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
         <!--end_lb_hot_share-->
         <!--lb_recommend_share-->
         <div class="lb_recommend_share">
-            <span class="lb_recommend_share_title">博文推荐</span>
+            <span class="lb_recommend_share_title">程序人生</span>
             <ul>
                 <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['results_index']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

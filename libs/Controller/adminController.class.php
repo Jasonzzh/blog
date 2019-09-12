@@ -25,7 +25,7 @@
             $this->init();
             $this->common->page_fy_all('life_dribs','Time',$page,16,'lifeDribs');
             $this->common->page_fy_all('learn_share','Time',$page,16,'learnShare');
-            $excellent_blogs = $this->common->data_ob('excellent_blogs','Time');
+            $excellent_blogs = $this->common->data_ob('excellent_blogs','sequence');
             $this->common->Smarty->assign(array('excellent_blogs'=>$excellent_blogs));
         }
 

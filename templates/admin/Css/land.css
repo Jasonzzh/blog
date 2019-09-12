@@ -5,7 +5,7 @@
 .land>ul>li>input{width: 80%;height: 36px;margin:20px auto 0;display: block;border-radius: 4px;border: 1px solid rgb(185,185,185);}
 .land>ul>li>input[type='text']{text-indent: 12px;font-size: 16px;outline:none;}
 .land>ul>li>input[type='password']{text-indent: 12px;font-size: 16px;outline:none;}
-.land>ul>li>input[type='submit']{background: #66CDAA;font-size: 16px;color: #FFF;letter-spacing: 2px;border: 0;height: 38px;cursor:pointer;outline: none;}
+.land>ul>li>input[type='submit']{background: #66CDAA;font-size: 16px;color: #FFF;letter-spacing: 2px;border: 0;height: 38px;cursor:pointer;outline: none;-webkit-appearance: none;}
 .onInput{border-color: #4395FF !important;box-shadow: 0 0 10px rgb(230,230,230);}
 .right{border-color: #66CDAA !important;box-shadow: 0 0 10px rgb(230,230,230);}
 .wrong{border-color: red !important;box-shadow: 0 0 10px rgb(230,230,230);}

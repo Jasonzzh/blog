@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-09-09 12:15:21
+<?php /* Smarty version Smarty-3.1.16, created on 2019-09-11 11:24:16
          compiled from "templates\aboutMe.html" */ ?>
 <?php /*%%SmartyHeaderCode:32085d75d1d9329b48-21946436%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '901994b3ea976b1a5d56d6a8d1d098169d658b5f' => 
     array (
       0 => 'templates\\aboutMe.html',
-      1 => 1567763371,
+      1 => 1568171941,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5d75d1d9407382_41660782',
   'variables' => 
   array (
     'skin' => 0,
@@ -24,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'about_me' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_5d75d1d9407382_41660782',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d75d1d9407382_41660782')) {function content_5d75d1d9407382_41660782($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en" class="skin<?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
@@ -74,21 +74,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
 $_smarty_tpl->tpl_vars['value']->_loop = true;
 ?>
-        <div class="aboutMe_title">
-            <i>
-                <a href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-"><img src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
-/templates/Images/back_logo.jpg"/></a>
-            </i>
-            <span class="aboutMe_title1"><?php echo $_smarty_tpl->tpl_vars['value']->value['Name'];?>
-</span>
-            <span class="aboutMe_title2"><?php echo $_smarty_tpl->tpl_vars['value']->value['Title'];?>
-</span>
-            <span class="aboutMe_title3"><?php echo $_smarty_tpl->tpl_vars['value']->value['SmallTitle'];?>
-</span>
-        </div>
         <div class="aboutMe_content">
-            <span class="aboutMe_content_title"></span>
             <span class="aboutMe_content_text"><?php echo $_smarty_tpl->tpl_vars['value']->value['Content'];?>
 </span>
         </div>
@@ -103,6 +89,12 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    <?php echo $_smarty_tpl->getSubTemplate ('./sideWindow.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+</div>
+<!--end_sideWindow-->
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>

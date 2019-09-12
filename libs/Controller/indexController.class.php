@@ -92,7 +92,7 @@
         public function excellentBlogs()
         {
             $this->init('excellentBlogs');
-            $excellent_blogs = $this->common->data_some('excellent_blogs','ControllShow',1,'Time');
+            $excellent_blogs = $this->common->data_some('excellent_blogs','ControllShow',1,'sequence');
             $this->common->Smarty->assign(array('excellent_blogs'=>$excellent_blogs));
             /*--------调用View层方法实现数据以什么视图展现--------*/
             $this->common->Smarty->display('excellentBlogs.html');

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-09-09 12:16:03
+<?php /* Smarty version Smarty-3.1.16, created on 2019-09-11 14:44:46
          compiled from "templates\excellentBlogs.html" */ ?>
 <?php /*%%SmartyHeaderCode:216915d75d2030e1311-26252333%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b12ebbc3de630a05fb9d17b47a5fe8a5e772381a' => 
     array (
       0 => 'templates\\excellentBlogs.html',
-      1 => 1567763385,
+      1 => 1568002888,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5d75d2031c4955_46496487',
   'variables' => 
   array (
     'skin' => 0,
@@ -24,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'excellent_blogs' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_5d75d2031c4955_46496487',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d75d2031c4955_46496487')) {function content_5d75d2031c4955_46496487($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en" class="skin<?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
@@ -116,7 +116,12 @@ handInSite/" method="POST">
 
 </div>
 <!--end_bottom-->
-</body>
+<!--sideWindow-->
+<div class="sideWindow">
+    <?php echo $_smarty_tpl->getSubTemplate ('./sideWindow.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+</div>
+<!--end_sideWindow-->
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
@@ -125,4 +130,5 @@ handInSite/" method="POST">
 /templates/Js/public.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Js/excellentBlogs.js"></script>
+</body>
 </html><?php }} ?>
