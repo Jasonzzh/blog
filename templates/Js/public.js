@@ -84,6 +84,20 @@ $(function(){
     })
 });
 /*---end_rb_hot_click---*/
+/*rb_excellentBlogs*/
+function rgb() {
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+    const rgb = '('+r+','+g+','+b+')';
+    return rgb;
+}
+$(function () {
+    $('.rb_excellentBlogs>ul>li').each(function () {
+        $(this).css({background: 'rgb'+rgb()});
+    })
+})
+/*end_rb_excellentBlogs*/
 /*---bottom---*/
 $(function(){
     $(".backTop").on("click",function(){

@@ -29,3 +29,17 @@ $(function(){
     })
 });
 /*---end_handIn_Sites---*/
+/*---excellentBlogs_box---*/
+function rgb() {
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+    const rgb = '('+r+','+g+','+b+')';
+    return rgb;
+}
+$(function () {
+    $('.excellentBlogs_box>ul>li').each(function () {
+        $(this).css({background: 'rgb'+rgb()});
+    })
+})
+/*---end_excellentBlogs_box---*/

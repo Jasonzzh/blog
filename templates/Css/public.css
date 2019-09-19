@@ -139,7 +139,7 @@ html{width: 100%;min-width:320px;}
 .rb_excellentBlogs_title:hover::before{width:85px;}
 .rb_excellentBlogs_title:hover::after{width:85px;}
 .rb_excellentBlogs>ul{width:86%;margin:20px auto 0;overflow:hidden;}
-.rb_excellentBlogs>ul>li{float:left;padding:5px 10px;border:1px solid #66CDAA;background:#66CDAA;margin: 0 10px 10px 0;}
+.rb_excellentBlogs>ul>li{float:left;padding:6px 10px;;background:#66CDAA;margin: 0 10px 10px 0;}
 .rb_excellentBlogs>ul>li>a{font-size:14px;color:#FFF;}
 @media screen and (max-width:1050px){
     .rb_excellentBlogs{margin-bottom:10px;}

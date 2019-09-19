@@ -5,7 +5,7 @@ $(function(){
     var index = 0;
     var $li = $(".banner>ul>li");
     var banner = $('.banner').width();
-    var angle = 90;
+    var angle = 0;
     var isClick = true;
     $('.banner>ul>li').eq(0).css({transform: 'translateZ(-'+banner/2+'px) rotateY(180deg)'});
     $('.banner>ul>li').eq(3).css({transform: 'translateZ('+banner/2+'px)'});
@@ -135,8 +135,3 @@ $(function(){
     })();
 });
 /*---end_lb_recommend_share---*/
-/*rb_excellentBlogs*/
-$(function () {
-    //
-})
-/*end_rb_excellentBlogs*/

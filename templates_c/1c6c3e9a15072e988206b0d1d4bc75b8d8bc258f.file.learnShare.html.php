@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-09-09 12:18:48
+<?php /* Smarty version Smarty-3.1.16, created on 2019-09-19 11:26:17
          compiled from "templates\learnShare.html" */ ?>
 <?php /*%%SmartyHeaderCode:177695d75d2a893c490-68940462%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1c6c3e9a15072e988206b0d1d4bc75b8d8bc258f' => 
     array (
       0 => 'templates\\learnShare.html',
-      1 => 1567763440,
+      1 => 1568102411,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5d75d2a8a15b65_13251926',
   'variables' => 
   array (
     'skin' => 0,
@@ -29,8 +31,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'excellent_blogs' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_5d75d2a8a15b65_13251926',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d75d2a8a15b65_13251926')) {function content_5d75d2a8a15b65_13251926($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en" class="skin<?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
@@ -41,7 +41,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 <?php } ?>">
 <head>
     <meta charset="UTF-8">
-    <title>学习分享</title>
+    <title>技术分享</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['seo_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -76,7 +76,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
     <div class="left_box">
         <!--lb_hot_share-->
         <div class="lb_hot_share">
-            <span class="lb_hot_share_title">学习分享</span>
+            <span class="lb_hot_share_title">技术分享</span>
             <ul>
                 <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['results_learnShare']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -221,6 +221,12 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 
 </div>
 <!--end_bottom-->
+<!--sideWindow-->
+<div class="sideWindow">
+    <?php echo $_smarty_tpl->getSubTemplate ('./sideWindow.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+</div>
+<!--end_sideWindow-->
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /templates/Js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
