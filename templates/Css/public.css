@@ -19,7 +19,7 @@ html{width: 100%;min-width:320px;}
 .skin3{background:#215d5d;}
 /*---end_skin---*/
 /*----top----*/
-.top{width:100%;height:60px;position:fixed;background:#1C2327;left:0;top:0;z-index:99;transition:all 0.3s ease 0.1s;}
+.top{width:100%;height:60px;position:fixed;background:#1C2327;left:0;top:0;z-index:99;transition:all 0.3s ease 0.1s;box-shadow: 0 0 10px rgba(0,0,0,0.3);}
 .top::before {background: #000 linear-gradient(to left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);content: "";height: 5px;position: absolute;top: 0;width: 100%;}
 .top_center{position:relative;width:1200px;margin:0 auto;}
 .logo{position: absolute;top: 17px;left: 0;}

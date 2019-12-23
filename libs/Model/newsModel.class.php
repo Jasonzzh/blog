@@ -3,6 +3,7 @@
 
         function findAll($dataTable){
             $sql = "select * from $dataTable";
+            return $sql;
         }
 
         function findAll_orderby_date($dataTable,$sortParameters){
