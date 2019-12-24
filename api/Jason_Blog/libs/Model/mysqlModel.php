@@ -33,7 +33,7 @@ class mysqlModel {
             if(is_bool($query)) {
                 $result = $query;
             } else {
-                while($rs = mysqli_fetch_array($query)) {
+                while($rs = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                     $result[] = $rs;
                 }
             }
