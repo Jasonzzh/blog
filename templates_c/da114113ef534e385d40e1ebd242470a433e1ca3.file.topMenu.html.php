@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-09-06 18:36:38
+<?php /* Smarty version Smarty-3.1.16, created on 2019-12-25 09:39:22
          compiled from "F:\phpStudy\WWW\newBlog\templates\topMenu.html" */ ?>
 <?php /*%%SmartyHeaderCode:258105d7236b6e8b7a9-39214555%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'da114113ef534e385d40e1ebd242470a433e1ca3' => 
     array (
       0 => 'F:\\phpStudy\\WWW\\newBlog\\templates\\topMenu.html',
-      1 => 1567750814,
+      1 => 1577096708,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5d7236b6e9ab68_09791102',
   'variables' => 
   array (
     'root' => 0,
@@ -23,11 +25,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'NavId' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_5d7236b6e9ab68_09791102',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d7236b6e9ab68_09791102')) {function content_5d7236b6e9ab68_09791102($_smarty_tpl) {?><!------top_center//网站公共头部------>
 <meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 <div class="top_center">
     <!--logo-->
     <div class="logo">
