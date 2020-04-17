@@ -69,6 +69,9 @@ html{width: 100%;min-width:320px;}
 @media screen and (max-width:1050px){
     .right_box{width:100%;margin-top:10px;}
 }
+.fixed {
+    position: fixed;
+}
 /*myself_card*/
 .myself_card{border-radius: 3px;background:rgba(42,42,42,1);height: 260px;overflow: hidden;margin-bottom: 20px;}
 .myself_card h2 {font-size: 22px;margin:20px 18px 10px;color: #89919a;font-weight: normal;padding-bottom: 10px;}

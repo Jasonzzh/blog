@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-09-11 11:24:16
+<?php /* Smarty version Smarty-3.1.16, created on 2020-02-29 00:21:32
          compiled from "templates\aboutMe.html" */ ?>
 <?php /*%%SmartyHeaderCode:32085d75d1d9329b48-21946436%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '901994b3ea976b1a5d56d6a8d1d098169d658b5f' => 
     array (
       0 => 'templates\\aboutMe.html',
-      1 => 1568171941,
+      1 => 1577096604,
       2 => 'file',
     ),
   ),
@@ -37,7 +37,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 <head>
     <meta charset="UTF-8">
     <title>关于我</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['seo_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {

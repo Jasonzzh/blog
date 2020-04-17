@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-09-11 14:44:46
+<?php /* Smarty version Smarty-3.1.16, created on 2020-02-29 00:11:55
          compiled from "templates\excellentBlogs.html" */ ?>
 <?php /*%%SmartyHeaderCode:216915d75d2030e1311-26252333%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b12ebbc3de630a05fb9d17b47a5fe8a5e772381a' => 
     array (
       0 => 'templates\\excellentBlogs.html',
-      1 => 1568002888,
+      1 => 1577096617,
       2 => 'file',
     ),
   ),
@@ -37,7 +37,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 <head>
     <meta charset="UTF-8">
     <title>张先森个人博客-博客推荐</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['seo_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {

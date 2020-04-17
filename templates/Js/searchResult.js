@@ -1,5 +1,5 @@
-// const httpUrl = 'http://www.zhangqinblog.com/'; // 线上
-const httpUrl = 'http://localhost/newBlog/'; // 本地
+const httpUrl = 'https://www.zhangqinblog.com/'; // 线上
+// const httpUrl = 'http://localhost/newBlog/'; // 本地
 /*---lb_recommend_share---*/
 //热判断
 $(function(){

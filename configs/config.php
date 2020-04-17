@@ -11,6 +11,10 @@
             'excellentBlogs' => array('name' => '博客推荐','url' => 'excellentBlogs/','NavId' => 'excellentBlogs'),
             'aboutMe' => array('name' => '关于我','url' => 'aboutMe/','NavId' => 'aboutMe'),
             'feedback' => array('name' => '留言','url' => 'feedback/','NavId' => 'feedback')
+        ),
+        'allow_origin' => array(
+            'https://www.zhangqinblog.com/', 
+            'http://www.zhangqinblog.com/'
         )
 	);
 ?>

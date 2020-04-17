@@ -1,5 +1,10 @@
 <?php
     header('Content-Type: text/html;charset=utf-8');
+    require_once('./configs/config.php');
+    $origin = isset($_SERVER['HTTP_ORIGIN'])? $_SERVER['HTTP_ORIGIN'] : '';
+    if (in_array($origin, $config['allow_origin'])) {
+        header('Access-Control-Allow-Origin: '.$origin);
+    }
     //ini_set("error_reporting","E_ALL & ~E_NOTICE");
     ini_set('date.timezone','Asia/Shanghai');//时间设置
     require_once('./function/function.php');

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2019-11-23 10:33:25
+<?php /* Smarty version Smarty-3.1.16, created on 2020-02-29 00:21:25
          compiled from "templates\lifeDribs.html" */ ?>
 <?php /*%%SmartyHeaderCode:216155dd89a754b81c6-12530658%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3d82f2bd325e983bdd24ac0a2e632190186f92b0' => 
     array (
       0 => 'templates\\lifeDribs.html',
-      1 => 1568102430,
+      1 => 1577096648,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5dd89a7563b2e4_81344801',
   'variables' => 
   array (
     'skin' => 0,
@@ -29,8 +31,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'excellent_blogs' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_5dd89a7563b2e4_81344801',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5dd89a7563b2e4_81344801')) {function content_5dd89a7563b2e4_81344801($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en" class="skin<?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
@@ -42,7 +42,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 <head>
     <meta charset="UTF-8">
     <title>程序人生</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['seo_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {

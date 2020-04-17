@@ -1,7 +1,7 @@
 /*----top----*/
 //头部滚动效果
 $(function(){
-    var beforeTop = 0,afterTop = 0;
+    var beforeTop = 0, afterTop = 0;
     function opacity(Top){
         if(Top == 0){
             $(".top").css("opacity","1");
@@ -75,7 +75,6 @@ $(function(){
                 $(this).find("a").addClass("a_bgcur");
             }
         }
-
         else{
             if(index%2 !== 0){
                 $(this).find("a").addClass("a_bgcur");
@@ -117,3 +116,62 @@ $(function(){
     back_Top();
 });
 /*---end_bottom---*/
+
+/*---right_box---*/
+$(function () {
+    $(window).load(function () {
+        let href = window.location.href
+        , hrefArray = ['excellentBlogs', 'feedback', 'aboutMe']
+        , screenWidth = $(window).width()
+        , leftHeight = $('.left_box').height()
+        , rightHeight = $('.right_box').height()
+        console.log(screenWidth,'屏幕宽度')
+        for (index in hrefArray) {
+            if(href.indexOf(hrefArray[index]) !== -1 || screenWidth <= 1050 || leftHeight <= rightHeight) {
+                console.log('终止')
+                return false
+            }
+        }
+        let dom = $('.right_box')
+        , domWidth = dom.width()
+        , domHeight = dom.outerHeight(true)
+        , domLeft = dom.offset().left
+        , myselfCardHeight = $('.myself_card').outerHeight(true)
+        , rbHotClickHeight = $('.rb_hot_click').outerHeight(true)
+        , stationRecommendHeight = $('.station_recommend').outerHeight(true)
+        , rbExcellentBlogsHeight = $('.rb_excellentBlogs').outerHeight(true)
+        , rbQRcodeHeight = $('.rb_QRcode').outerHeight(true)
+        , bodyHeight = $(document).height()
+        , windowHeight = $(window).height()
+        , bottomHeight = $('.bottom').outerHeight(true)
+        $(document).scroll(function () {
+            dom.css({
+                'transition': 'all 0.3s ease'
+            })
+            sticky()
+        })
+        function sticky() {
+            const scrollTop = $(document).scrollTop()
+            if (myselfCardHeight + rbHotClickHeight + stationRecommendHeight + 80 <= scrollTop) {
+                dom.addClass('fixed')
+                dom.css({
+                    'left': domLeft + 'px',
+                    'width': domWidth,
+                })
+                if(bodyHeight - scrollTop - windowHeight <= bottomHeight) {
+                    dom.css({
+                        'top': '-' + (domHeight - rbQRcodeHeight) + 'px',
+                    })
+                } else {
+                    dom.css({
+                        'top': '-' + (domHeight - rbExcellentBlogsHeight - rbQRcodeHeight) + 'px',
+                    })
+                }
+            } else {
+                dom.removeClass('fixed')
+            }
+        }
+        sticky()
+    })
+})
+/*---right_box---*/

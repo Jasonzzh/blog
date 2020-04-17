@@ -1,5 +1,5 @@
-// const httpUrl = 'http://www.zhangqinblog.com/index.php?'; // 线上
-const httpUrl = 'http://localhost/newBlog/index.php?'; // 本地
+const httpUrl = 'https://www.zhangqinblog.com/index.php?'; // 线上
+// const httpUrl = 'http://localhost/newBlog/index.php?'; // 本地
 /*------admin_nav------*/
 $(function(){
     var navLi = $(".admin_nav>ul>li");
