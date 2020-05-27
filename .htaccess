@@ -1,5 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
+RewriteRule ^smartApi/(.+)/(.+)$ API/index.php?controller=$1&method=$2 [NC,L]
 RewriteRule ^admin/$ index.php?controller=admin&method=land [NC,L]
 RewriteRule ^search/$ index.php?controller=interactive&method=search [NC,L]
 RewriteRule ^handInSite/$ index.php?controller=interactive&method=handInSite [NC,L]
