@@ -13,7 +13,7 @@
         public function init(){
             $this->nav = M('nav')->nav($this->config);
             $this->Smarty = ORG('Smarty/', 'Smarty', $this->config['viewconfig']);// Smarty引擎类实例化
-            $this->Smarty->assign('root','http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,strrpos($_SERVER['SCRIPT_NAME'],'/')+1));// 绝对路径
+            $this->Smarty->assign('root','https://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,strrpos($_SERVER['SCRIPT_NAME'],'/')+1));// 绝对路径
             $this->Smarty->assign(array('nav'=>$this->nav));
         }
 
@@ -32,13 +32,13 @@
         // 翻页控制器公共方法
         // $db  数据库表名  $sp  排序字段  $page  当前页码  $Spage  每页显示个数 $name翻页输出变量名后缀以区别
         // 根据字段进行筛选
-        public function page_fy($db,$sp,$page,$Spage,$name){
+        public function page_fy($db, $sp, $page, $Spage, $name){
             $array = $this->data_ob($db,$sp);
-            $array = M('fyPage')->paging(16,$page,count($array));// 返回总页数pages和查询起始位置startSearch
-            $results = M('mysql')->query($this->conn,M('news')->findAll_orderby_pageShow($db,$sp,$array[1],$Spage,'ControllShow','0'));// ControllShow控制显示
+            $array = M('fyPage')->paging($Spage, $page, count($array));// 返回总页数pages和查询起始位置startSearch
+            $results = M('mysql')->query($this->conn, M('news')->findAll_orderby_pageShow($db,$sp,$array[1], $Spage, 'ControllShow', '0'));// ControllShow控制显示
             $results = M('mysql')->findAll($results);
-            $this->Smarty->assign('page_'.$name,$page);
-            $this->Smarty->assign('pages_'.$name,$array[0]);
+            $this->Smarty->assign('page_'.$name, $page);
+            $this->Smarty->assign('pages_'.$name, $array[0]);
             $this->Smarty->assign(array('results_'.$name=>$results));
         }
 

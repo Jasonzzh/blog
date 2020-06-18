@@ -10,7 +10,7 @@ a{text-decoration: none; }
 a:focus{outline: none; }/* 去掉火狐下链接虚线框 */
 html{width: 100%;min-width:320px;}
 /*--- 畅言 ---*/
-#pop_ad,#feedAv,#MZADX_205186_test{display: none;}
+#pop_ad, #feedAv, #MZADX_205186_test, .cyr_pop_ad {display: none;}
 .cy-logo {background-size: 100% !important;}
 /*---public---*/
 /*---skin---*/
